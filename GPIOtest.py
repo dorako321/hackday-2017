@@ -9,7 +9,7 @@ import time
 number=21
 
 # GPIO指定をGPIO番号で行う
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 # GPIO21ピンを出力モードに設定
 GPIO.setup(number, GPIO.OUT)
