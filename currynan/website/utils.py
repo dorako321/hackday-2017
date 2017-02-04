@@ -39,10 +39,25 @@ def executer(hour,minute,little=0,date=datetime.datetime.now()):
 #    f.write(str(delta))
 #    f.write("\n")
 
-    GPIOstart(number)
+
+    GPIO.setmode(GPIO.BOARD)
+    
+    GPIO.setup(number, GPIO.OUT)
+#    GPIO.setup(15, GPIO.OUT)
+#    GPIO.setup(16, GPIO.IN)
+
+    GPIO.output(number, 1)
+#    GPIO.output(15, 1)
     time.sleep(do_time)
+#    for  i in range((do_time-1) * 10):
+#        if GPIO.input(16):
+#            break
+#        time.sleep(0.1)
+#    GPIO.output(15, 0)
+    GPIO.output(number, 0)
 #    time.sleep(5)
-    GPIOcleanup()
+    GPIO.cleanup()
+
 
 #    f.write("finish")
 #    f.close()

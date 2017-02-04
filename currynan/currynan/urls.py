@@ -9,5 +9,4 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
                        url(r'^$', 'website.views.index'),
                        url(r'^exec$', 'website.views.doooooo'),
-                       url(r'^apple-touch-icon.png$', 'website.views.icon'),                       
 )

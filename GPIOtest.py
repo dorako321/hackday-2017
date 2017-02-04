@@ -6,7 +6,7 @@
 import RPi.GPIO as GPIO
 import time
 
-number=21
+number=11
 
 # GPIO指定をGPIO番号で行う
 GPIO.setmode(GPIO.BOARD)
@@ -15,10 +15,10 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(number, GPIO.OUT)
 
 # GPIO21番ピンを3.3Vに設定
-GPIO.output(number, 1)
+#GPIO.output(number, 1)
 
 # 1秒待つ
-time.sleep(1)
+#time.sleep(1)
 
 # GPIO設定をリセット
-GPIO.cleanup()
+#GPIO.cleanup()
