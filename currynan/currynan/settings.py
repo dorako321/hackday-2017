@@ -12,7 +12,25 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s [%(levelname)s] %(message)s'
+                    },
+            },
+    'handlers': {
+        'myapp': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/tmp/debug.log',
+            'maxBytes': 1024 * 1024,
+            'backupCount': 5,
+                    },
+            },
+    }
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 

@@ -10,7 +10,10 @@ import utils
 import threading
 import time
 from datetime import datetime
+from logging import getLogger
+
 # Create your views here.
+logger = getLogger(__name__)
 
 
 def index(request):
@@ -22,8 +25,11 @@ def doooooo(request):
     hour=request.POST['hour']
     minute=request.POST['minute']
     little=request.POST['little']
-    th = threading.Thread(target=utils.executer,args=(hour,minute,little))
+    date=datetime.now()
+    logger.info("make th")
+    th = threading.Thread(target=utils.executer,args=(hour,minute,little,date))
 #    utils.executer(hour,minute,little)
+    logger.info("th.start()")
     th.start()
 
     #make args
@@ -31,7 +37,7 @@ def doooooo(request):
     args["hour"]=hour
     args["minute"]=minute
     args["little"]=little
-    args["date"]=str(datetime.now())
+    args["date"]=str(date)
     return render_to_response('website/doooooo.html',
                               args,
                               context_instance=RequestContext(request))
