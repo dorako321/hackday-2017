@@ -1,11 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
 <head>
   <title>帰ったらお風呂</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+  
+  <!--Import materialize.css-->
+<!---
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+--->
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  <h1><center>ナンカレーはお好きですか？</center></h1>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  
+  <h1><center>oYUHARI</center></h1>
+  <hr>
+<!---
+  {% static 'style.css' %}
+  --->
+
   <form action="/exec" method="post">
     {% csrf_token %}
     <p>
+<!---
       <select name="hour">
 	{% for i in hour_list %}
           <option value="{{ i }}">{{ i }}</option>
@@ -16,8 +40,11 @@
           <option value="{{ i }}">{{ i }}</option>
 	  {% endfor %}
       </select>分に
+      --->
+ <input type="number" name="hour" min="0" max="23" value="0">時
+ <input type="number" name="minute" min="0" max="59" value="0">分に
     </p><p>
-      <input type="text" name="little" maxlength="3" size="1">リットル入れる
+      <input type="number" name="little" min="0" max="999" value="0"><font size="1">ミリ </font>リットル入れる
     </p>
     <input type="submit" value="送信">
   </form>
