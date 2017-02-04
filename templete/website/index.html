@@ -2,11 +2,20 @@
   <title>帰ったらお風呂</title>
 </head>
 <body>
-  <h1><center>curry-nan</center></h1>
+  <h1><center>ナンカレーはお好きですか？</center></h1>
   <form action="/exec" method="post">
     {% csrf_token %}
     <p>
-      <input type="text" name="hour" value="0" maxlength="2" size="1">時<input type="text" name="minute" value="0" maxlength="2" size="1">分に
+      <select name="hour">
+	{% for i in hour_list %}
+          <option value="{{ i }}">{{ i }}</option>
+	  {% endfor %}
+      </select>時
+      <select name="minute">
+	{% for i in minute_list %}
+          <option value="{{ i }}">{{ i }}</option>
+	  {% endfor %}
+      </select>分に
     </p><p>
       <input type="text" name="little" maxlength="3" size="1">リットル入れる
     </p>

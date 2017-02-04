@@ -17,7 +17,12 @@ logger = getLogger(__name__)
 
 
 def index(request):
-    return render_to_response('website/index.html',context_instance=RequestContext(request))
+    args={}
+    args["hour_list"]=range(0,24)
+    args["minute_list"]=range(0,60)
+    return render_to_response('website/index.html',
+                              args,
+                              context_instance=RequestContext(request))
 
 
 
