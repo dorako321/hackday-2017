@@ -1,18 +1,16 @@
-<head>
-  <title>Okey!</title>
-</head>
-
-<body>
-  <h1><center>私はナンカレーと呼びたい</center></h1>
-  <p>
-    現在の時刻 {{ date }}</br>
-    {{ hour }}時{{ minute }}分に{{ little }}リットル入湯
-  </p><p>
-    <font size="40">受け付けました</font></br>
-  </p>
-  
-  <form action="/" method="post">
-    {% csrf_token %}
-    <input type ="submit" value="戻る">
-  </form>
-</body>
+{% extends "website/base.html" %}
+{% block title %}
+受付完了
+{% endblock %}
+{% block content %}
+<p>
+  現在の時刻 {{ date }}</br>
+  {{ hour }}時{{ minute }}分に{{ little }}リットル入湯
+</p><p>
+  <font size="40">受け付けました</font></br>
+</p>
+<form action="/" method="post">
+  {% csrf_token %}
+  <input type ="submit" value="戻る">
+</form>
+{% endblock %}

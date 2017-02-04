@@ -24,25 +24,26 @@ def executer(hour,minute,little=0,date=datetime.datetime.now()):
 
     #予約された時間になるまで待つ
     #time.sleep(予約された時間 - 現在の時間)
-    reservedTime=date.replace(hour=int(hour)).replace(minute=int(minute)).replace(second=0)
-    delta=(reservedTime - date).seconds
-    if delta > 60:
-        return
-    time.sleep(delta)
+#    reservedTime=date.replace(hour=int(hour)).replace(minute=int(minute)).replace(second=0)
+#    delta=(reservedTime - date).seconds
+#    if delta > 60:
+#        return
+#    time.sleep(delta)
+    time.sleep(3)
 
-    f=open("test.tmp","w")
+#    f=open("test.tmp","w")
 #    f.write(str(date))
-    f.write("\n")
+#    f.write("\n")
 #    f.write(str(reservedTime))
-    f.write("\n")
-    f.write(str(delta))
-    f.write("\n")
+#    f.write("\n")
+#    f.write(str(delta))
+#    f.write("\n")
 
     GPIOstart(number)
     time.sleep(do_time)
 #    time.sleep(5)
     GPIOcleanup()
 
-    f.write("finish")
-    f.close()
+#    f.write("finish")
+#    f.close()
 
