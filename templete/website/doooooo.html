@@ -4,9 +4,15 @@
 
 <body>
   <h1><center>curry-nan</center></h1>
-
+  <p>
+    現在の時刻 {{ date }}</br>
+    {{ hour }}時{{ minute }}に{{ little }}リットル入湯
+  </p><p>
+    <font size="40">受け付けました</font></br>
+  </p>
+  
   <form action="/" method="post">
     {% csrf_token %}
-    <input type ="submit" name ="戻る">
+    <input type ="submit" value="戻る">
   </form>
 </body>

@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import RPi.GPIO as GPIO
+import time
 
 def GPIOstart(number):
     GPIO.setmode(GPIO.BOARD)
@@ -12,3 +13,10 @@ def GPIOstart(number):
 def GPIOcleanup():
     GPIO.cleanup()
     return
+
+def executer(hour,minute,little):
+    number=21
+
+    GPIOstart(number)
+    time.sleep(int(little))
+    GPIOcleanup()
