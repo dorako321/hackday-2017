@@ -47,5 +47,3 @@ def doooooo(request):
                               args,
                               context_instance=RequestContext(request))
 
-def icon(request):
-    return render_to_response('website/icon.html')
